@@ -3,18 +3,12 @@
 <head>
   <meta charset="utf-8"/>
 
-  <!--
-  TODO 3b
-  add meta viewport tag
-  -->
+  <meta name=viewport content="width=device-width, initial-scale=1">
 
 
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>  
 
-  <!--
-  TODO 2a
-  add link to Bootstrap CDN
-  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/styles.css"/>
 
@@ -22,70 +16,42 @@
 </head>
 <body>
 
-  <!--
-  TODO 2b
-  give the header a class of "jumbotron"
-  give the inner paragraph a class of "text-muted"
-  -->
-  <header>
+  <header class="jumbotron">
     <h1>FlickList</h1>
-    <p>Keep a list of all the movies you've been meaning to watch.</p>
+    <p class="text-muted">Keep a list of all the movies you've been meaning to watch.</p>
   </header>
 
 
-  <div class="main-content">
-    <!--
-    TODO 3a
-    put the rest of the content (both sections) inside a div with class "row", 
-    and then add the class "container-fluid" to this div (declared above).
-    Then, give each section a class of "col-?-?" (fill in the question marks).
-    The watchlist and browse list should appear side by side,
-    where the watchlist takes up 5/12 of the width of the screen,
-    and the browse list takes 7/12 of the width of the screen,
-    unless the user is on a tablet or mobile phone, in which case, each section should
-    fill the entire width, with the watchlist first and the browse list below.
-    -->
+  <div class="main-content container-fluid">
+    <div class="row">
 
-    <section id="section-watchlist">
-      <header>
-        <h2>My Watchlist</h2>
-        <hr/>
-      </header>
+      <section class="col-xs-12 col-md-5" id="section-watchlist">
+        <header>
+          <h2>My Watchlist</h2>
+          <hr/>
+        </header>
 
-      <!-- 
-      TODO 2f
-      Give this list a class of "list-inline"
-      -->
-      <ul></ul>
-    </section>
+        <ul class="list-inline"></ul>
+      </section>
 
-    <section id="section-browse">
-      <header>
-        <h2>Browse Movies</h2>
+      <section class="col-xs-12 col-md-7" id="section-browse">
+        <header>
+          <h2>Browse Movies</h2>
+          <hr>
 
-        <!--
-        TODO 2e
-        Style this form and its inputs to look like the demo.
-        Use the following classes (google them and find some examples):
-        "input-group", "form-control", "input-group-btn", "btn", "btn-primary"
-        -->
-        <form id="form-search">
-          <input type="text" name="query"/>
-          <input type="submit" value="Search By Title"/>
-        </form>
+          <form id="form-search">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for movies" name="query"/>
+              <span class="input-group-btn">
+                  <input type="submit" class="btn btn-primary" value="Search By Title">
+              </span>
+            </div>
+          </form>
+        </header>
 
-      </header>
-
-      <!-- 
-      TODO 2d
-      Style this list to look like the demo.
-      You will also have to make change in flicklist.js inside the render function
-      Use the following styles:
-      "list-group", "list-group-item", "btn", "btn-primary", 
-      -->
-      <ul></ul>
-    </section>
-
+        <ul class="list-group"></ul>
+      </section>
+    </div>
   </div>
 
   <script src="js/flicklist.js"></script>
